@@ -20,7 +20,7 @@ function App() {
             Johannes Backhaus
           </h1>
           <p className="text-neutral-400 mt-4 text-xl">
-            Software & Innovation
+            Musiker | Orchestermanagement | Personalrat | Rettungsdienst
           </p>
         </motion.div>
 
