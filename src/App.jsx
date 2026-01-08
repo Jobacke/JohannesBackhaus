@@ -35,13 +35,30 @@ function App() {
             icon={<User className="h-4 w-4 text-neutral-500" />}
           />
 
-          {/* Tile 2: Contact (Small) */}
+          {/* Tile 2: Contact (Detailed) */}
           <BentoCard
-            href="mailto:johannes@vjbackhaus.com"
-            className="md:col-span-1 bg-neutral-950"
+            className="md:col-span-1 md:row-span-2 bg-neutral-950"
             title="Kontakt"
-            description="Schreiben Sie uns eine Email."
-            header={<div className="flex flex-1 items-center justify-center w-full h-full min-h-[6rem] rounded-xl bg-neutral-900 border border-white/5 group-hover/bento:bg-primary-900/20 transition-colors"><Mail className="h-10 w-10 text-neutral-400 group-hover/bento:text-primary-400 transition-colors" /></div>}
+            description={
+              <div className="flex flex-col gap-4 mt-2">
+                <div>
+                  <p className="font-bold text-neutral-200">Postanschrift</p>
+                  <p className="text-neutral-400">Veronika und Johannes Backhaus</p>
+                  <p className="text-neutral-400">Wotanstrasse 5</p>
+                  <p className="text-neutral-400">85579 Neubiberg, Deutschland</p>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+491749327782" className="hover:text-primary-400 transition-colors flex items-center gap-2">
+                    <span className="font-bold text-neutral-200">Mobil:</span> +49 174 93277 82
+                  </a>
+                  <a href="mailto:johannes@vjbackhaus.com" className="hover:text-primary-400 transition-colors flex items-center gap-2">
+                    <span className="font-bold text-neutral-200">Mail:</span> johannes@vjbackhaus.com
+                  </a>
+                </div>
+              </div>
+            }
+            header={<div className="flex flex-1 items-center justify-center w-full h-full min-h-[6rem] rounded-xl bg-neutral-900 border border-white/5 group-hover/bento:bg-primary-900/10 transition-colors"><Mail className="h-10 w-10 text-neutral-500 group-hover/bento:text-primary-400 transition-colors" /></div>}
             icon={<Mail className="h-4 w-4 text-neutral-500" />}
           />
 
