@@ -6,6 +6,11 @@ import { Slideshow } from "./components/ui/Slideshow";
 import { Briefcase, Star, Mail, MapPin, Linkedin, Github, User } from "lucide-react";
 import { cn } from "./lib/utils";
 
+// Import images
+import mapImg from "./assets/images/map-dark.png";
+import ambulanceImg from "./assets/images/juh_ambulance.jpg";
+import motorcycleImg from "./assets/images/juh_motorcycle.jpg";
+
 function App() {
   return (
     <Layout>
@@ -68,7 +73,7 @@ function App() {
             href="#"
             className="md:col-span-1 md:row-span-2 bg-neutral-900"
             title="Beruf"
-            description="Beruflicher Hintergrund und Schwerpunkte. Expertise in Softwareentwicklung und Projektmanagement."
+            description="Meine aktuelle Tätigkeit beim Bayerischen Rundfunk"
             header={
               <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden border border-white/5 relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent z-10" />
@@ -88,8 +93,8 @@ function App() {
               <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden border border-white/5 relative group">
                 <Slideshow
                   images={[
-                    "/JohannesBackhaus/src/assets/images/juh_ambulance.jpg",
-                    "/JohannesBackhaus/src/assets/images/juh_motorcycle.jpg"
+                    ambulanceImg,
+                    motorcycleImg
                   ]}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent z-20 pointer-events-none" />
@@ -109,7 +114,7 @@ function App() {
                 {/* Map Background */}
                 <div
                   className="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-500"
-                  style={{ backgroundImage: "url('/JohannesBackhaus/src/assets/images/map-dark.png')" }}
+                  style={{ backgroundImage: `url(${mapImg})` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent z-10" />
 
