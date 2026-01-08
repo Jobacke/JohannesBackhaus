@@ -30,7 +30,7 @@ function App() {
           <BentoCard
             className="md:col-span-2 md:row-span-1 bg-gradient-to-br from-neutral-900 to-neutral-800"
             title="Über mich"
-            description="Vom Solopauker zum Vorsitzenden des Gesamtpersonalrates. Geboren in Erfurt und musikalisch verwurzelt in Weimar, blicke ich auf eine vielseitige Laufbahn zurück: 15 Jahre als Berufsmusiker, gefolgt von Führungspositionen im Orchestermanagement in Dessau, an der Bayerischen Staatsoper und beim BRSO. Seit 2024 widme ich mich als Vorsitzender des Gesamtpersonalrates voll der Interessenvertretung beim Bayerischen Rundfunk."
+            description="Vom stellv. Solopauker zum Vorsitzenden des Gesamtpersonalrates. Geboren in Erfurt und musikalisch ausgebildet in Erfurt und Weimar, blicke ich auf eine vielseitige Laufbahn zurück: 15 Jahre als Berufsmusiker, gefolgt von Führungspositionen im Orchestermanagement in Dessau, an der Bayerischen Staatsoper und beim BRSO. Seit 2024 widme ich mich als Vorsitzender des Gesamtpersonalrates voll der Interessenvertretung beim Bayerischen Rundfunk."
             header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-primary-900/40 to-neutral-900 border border-white/5" />}
             icon={<User className="h-4 w-4 text-neutral-500" />}
           />
