@@ -9,12 +9,14 @@ export const BentoCard = ({
     title,
     description,
     href,
+    ...props
 }) => {
-    const Component = href ? "a" : "div";
+    const Component = href ? "a" : props.onClick ? "button" : "div";
 
     return (
         <Component
             href={href}
+            {...props}
             className={cn(
                 "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-neutral-900 border border-white/10 justify-between flex flex-col space-y-4 shadow-none relative overflow-hidden",
                 className

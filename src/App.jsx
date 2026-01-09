@@ -6,7 +6,8 @@ import { BentoCard } from "./components/bento/BentoCard";
 import { ToggleImage } from "./components/ui/ToggleImage";
 import { FlipCard } from "./components/ui/FlipCard";
 import { ImageModal } from "./components/ui/ImageModal";
-import { Briefcase, Star, Mail, MapPin, Linkedin, Github, User, ZoomIn } from "lucide-react";
+import { DetailModal } from "./components/ui/DetailModal";
+import { Briefcase, Star, Mail, MapPin, Linkedin, Github, User, ZoomIn, ArrowUpRight } from "lucide-react";
 import { cn } from "./lib/utils";
 
 // Import images
@@ -20,6 +21,7 @@ import certAclsImg from "./assets/images/certificate_acls.jpg";
 
 function App() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [showBioModal, setShowBioModal] = useState(false);
 
   const certificates = [
     { src: certRsImg, alt: "Rettungssanitäter Urkunde", label: "Rettungssanitäter" },
@@ -27,10 +29,27 @@ function App() {
     { src: certAclsImg, alt: "ACLS Zertifikat", label: "ACLS Provider" },
   ];
 
+  const fullBio = (
+    <>
+      <p>
+        Vom stellvertretenden Solopauker zum Vorsitzenden des Gesamtpersonalrates.
+        Geboren in Erfurt und musikalisch ausgebildet in Erfurt und Weimar, blicke ich auf eine vielseitige Laufbahn zurück.
+      </p>
+      <p className="mt-4">
+        Nach 15 Jahren als passionierter Berufsmusiker wechselte ich die Perspektive:
+        Es folgten spannende Jahre in Führungspositionen im Orchestermanagement – zunächst in Dessau,
+        dann an der renommierten Bayerischen Staatsoper und schließlich beim Symphonieorchester des Bayerischen Rundfunks (BRSO).
+      </p>
+      <p className="mt-4">
+        Seit 2024 widme ich mich nun mit voller Überzeugung einer neuen Verantwortung:
+        Als Vorsitzender des Gesamtpersonalrates vertrete ich engagiert die Interessen der Mitarbeitenden beim Bayerischen Rundfunk.
+      </p>
+    </>
+  );
+
   return (
     <Layout>
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-12 md:py-24">
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,13 +65,22 @@ function App() {
         </motion.div>
 
         <BentoGrid>
-
           {/* Tile 1: About / Intro (Large) */}
           <BentoCard
-            className="md:col-span-2 md:row-span-1 bg-gradient-to-br from-neutral-900 to-neutral-800"
+            className="md:col-span-2 md:row-span-1 bg-gradient-to-br from-neutral-900 to-neutral-800 cursor-pointer group/about"
             title="Über mich"
-            description="Vom stellv. Solopauker zum Vorsitzenden des Gesamtpersonalrates. Geboren in Erfurt und musikalisch ausgebildet in Erfurt und Weimar, blicke ich auf eine vielseitige Laufbahn zurück: 15 Jahre als Berufsmusiker, gefolgt von Führungspositionen im Orchestermanagement in Dessau, an der Bayerischen Staatsoper und beim BRSO. Seit 2024 widme ich mich als Vorsitzender des Gesamtpersonalrates voll der Interessenvertretung beim Bayerischen Rundfunk."
-            header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-primary-900/40 to-neutral-900 border border-white/5" />}
+            onClick={() => setShowBioModal(true)}
+            description={
+              <div className="flex flex-col gap-2">
+                <p className="line-clamp-3 md:line-clamp-none text-neutral-400 group-hover/about:text-neutral-300 transition-colors">
+                  Vom stellv. Solopauker zum Vorsitzenden des Gesamtpersonalrates. Geboren in Erfurt und musikalisch ausgebildet in Erfurt und Weimar, blicke ich auf eine vielseitige Laufbahn zurück...
+                </p>
+                <div className="flex items-center gap-1 text-primary-400 text-sm font-medium mt-1 opacity-80 group-hover/about:opacity-100 transition-opacity">
+                  Mehr lesen <ArrowUpRight className="w-4 h-4" />
+                </div>
+              </div>
+            }
+            header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-primary-900/40 to-neutral-900 border border-white/5 transition-colors group-hover/about:bg-primary-900/20" />}
             icon={<User className="h-4 w-4 text-neutral-500" />}
           />
 
@@ -188,6 +216,15 @@ function App() {
         <ImageModal
           src={selectedImage}
           onClose={() => setSelectedImage(null)}
+        />
+      )}
+
+      {/* Bio Modal */}
+      {showBioModal && (
+        <DetailModal
+          title="Über mich"
+          content={fullBio}
+          onClose={() => setShowBioModal(false)}
         />
       )}
     </Layout>
