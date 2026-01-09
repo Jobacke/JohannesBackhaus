@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Layout } from "./layouts/Layout";
 import { BentoGrid } from "./components/bento/BentoGrid";
@@ -7,7 +6,6 @@ import { ToggleImage } from "./components/ui/ToggleImage";
 import { FlipCard } from "./components/ui/FlipCard";
 import { Briefcase, Star, Mail, MapPin, Linkedin, Github, User } from "lucide-react";
 import { cn } from "./lib/utils";
-import { NewEntryForm } from "./components/work-calendar/NewEntryForm";
 
 // Import images
 import mapImg from "./assets/images/map-dark.png";
@@ -17,8 +15,6 @@ import orchestraImg from "./assets/images/br_orchestra.jpg";
 import certImg from "./assets/images/certificate_rs.jpg";
 
 function App() {
-  const [showNewEntry, setShowNewEntry] = useState(false);
-
   return (
     <Layout>
       <div className="px-6 md:px-12 py-12 relative">
@@ -158,42 +154,6 @@ function App() {
 
         </BentoGrid>
       </div>
-
-      {/* Floating Action Button for New Entry Demo */}
-      <div className="fixed bottom-6 right-6 z-40">
-        <button
-          onClick={() => setShowNewEntry(true)}
-          className="flex items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white px-5 py-3 rounded-full shadow-lg shadow-primary-900/30 transition-all hover:scale-105 active:scale-95 font-medium"
-        >
-          <Plus className="w-5 h-5" />
-          Neuer Eintrag (Demo)
-        </button>
-      </div>
-
-      {/* New Entry Modal */}
-      <AnimatePresence>
-        {showNewEntry && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setShowNewEntry(false)}
-              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-            />
-            <div className="relative z-10 w-full max-w-2xl">
-              <NewEntryForm
-                onClose={() => setShowNewEntry(false)}
-                onSubmit={(data) => {
-                  console.log(data);
-                  setShowNewEntry(false);
-                  alert("Eintrag gespeichert! (Demo)");
-                }}
-              />
-            </div>
-          </div>
-        )}
-      </AnimatePresence>
 
     </Layout>
   );
