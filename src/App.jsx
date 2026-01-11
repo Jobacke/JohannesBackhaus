@@ -223,7 +223,7 @@ function App() {
                       <Linkedin className="w-5 h-5" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.instagram.com/johannes_backi/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 bg-neutral-800 rounded-lg hover:bg-[#E1306C] hover:text-white transition-colors text-neutral-400 border border-white/5"
