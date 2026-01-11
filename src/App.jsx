@@ -52,10 +52,14 @@ function App() {
   const professionContent = (
     <>
       <p>
-        Als Orchestermanager beim Symphonieorchester des Bayerischen Rundfunks koordiniere ich die künstlerischen und organisatorischen Abläufe eines der weltweit führenden Orchester.
+        Als Leiter des Orchesterbüros beim Symphonieorchester des Bayerischen Rundfunks koordiniere ich vielfältige organisatorische Abläufe eines der weltweit führenden Orchester.
       </p>
       <p className="mt-4">
-        [Platzhalter für mehr Details zu Aufgaben, Verantwortung, Projekten. Hier könnte stehen, wie Du die Schnittstelle zwischen Kunst und Administration bildest, welche besonderen Herausforderungen es gibt, etc.]
+        Immer wieder gibt es spannende und herausfordernde Projekte und in meiner Tätigkeit habe ich die Möglichkeit, mit den besten Dirigentinnen, Dirigenten, Solistinnen und Solisten der Welt zusammenzuarbeiten.
+      </p>
+      <p className="mt-4">
+        Neben den zahlreichen Konzerten in München und in Bayern gehören auch Konzertreisen in Europa, Asien, den Vereinigten Staaten von Amerika sowie Südamerika zum Tätigkeitsfeld.
+        Für mich sind die vielfältigen und komplexen Aufgaben einer der spannendsten Berufe der Welt!
       </p>
     </>
   );
