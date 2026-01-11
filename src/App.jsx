@@ -141,12 +141,12 @@ function App() {
               </div>
             }
             header={
-              <div className="absolute inset-y-0 right-0 w-1/2 h-full z-0 hidden md:block">
-                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-neutral-900/20 to-neutral-900 z-10" />
+              <div className="absolute inset-y-0 right-0 w-full md:w-1/2 h-full z-0">
+                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-neutral-900 via-neutral-900/60 to-transparent md:via-neutral-900/20 md:to-neutral-900 z-10" />
                 <img
                   src={profileImg}
                   alt="Johannes Backhaus"
-                  className="w-full h-full object-cover object-top opacity-60 grayscale-[30%] group-hover/about:grayscale-0 group-hover/about:opacity-100 group-hover/about:scale-105 transition-all duration-700"
+                  className="w-full h-full object-cover object-top opacity-50 md:opacity-60 grayscale-[30%] group-hover/about:grayscale-0 group-hover/about:opacity-100 group-hover/about:scale-105 transition-all duration-700"
                 />
               </div>
             }
