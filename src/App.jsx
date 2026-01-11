@@ -7,7 +7,7 @@ import { ToggleImage } from "./components/ui/ToggleImage";
 import { FlipCard } from "./components/ui/FlipCard";
 import { ImageModal } from "./components/ui/ImageModal";
 import { DetailModal } from "./components/ui/DetailModal";
-import { Briefcase, Star, Mail, MapPin, Linkedin, Github, User, ZoomIn, ArrowUpRight } from "lucide-react";
+import { Briefcase, Star, Mail, MapPin, Linkedin, Github, User, ZoomIn, ArrowUpRight, Phone, Copy, Check, ExternalLink } from "lucide-react";
 import { cn } from "./lib/utils";
 
 // Import images
@@ -18,6 +18,28 @@ import orchestraImg from "./assets/images/br_orchestra.jpg";
 import certRsImg from "./assets/images/certificate_rs.jpg";
 import certWbImg from "./assets/images/certificate_wb.jpg";
 import certAclsImg from "./assets/images/certificate_acls.jpg";
+
+// Helper Component for Copy Button
+function CopyButton({ text }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = (e) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      className="p-2.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 border border-white/5 hover:border-white/10 text-neutral-400 hover:text-white transition-colors"
+      title="Kopieren"
+    >
+      {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+    </button>
+  );
+}
 
 function App() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -146,31 +168,74 @@ function App() {
             icon={<Briefcase className="h-4 w-4 text-neutral-500" />}
           />
 
-          {/* Tile 3: Contact (Tall) */}
+          {/* Tile 3: Contact (Tall) - Redesign "Connected & Accessible" */}
           <BentoCard
-            className="md:col-span-1 md:row-span-2 bg-neutral-950"
+            className="md:col-span-1 md:row-span-2 bg-neutral-950 group/contact"
             title="Kontakt"
             description={
-              <div className="flex flex-col gap-4 mt-2">
-                <div>
-                  <p className="font-bold text-neutral-200">Postanschrift</p>
-                  <p className="text-neutral-400">Johannes Backhaus</p>
-                  <p className="text-neutral-400">Wotanstrasse 5</p>
-                  <p className="text-neutral-400">85579 Neubiberg, Deutschland</p>
+              <div className="flex flex-col gap-6 mt-4">
+                {/* Address Section */}
+                <div className="flex items-start gap-3 text-neutral-400 group-hover/contact:text-neutral-300 transition-colors">
+                  <MapPin className="w-5 h-5 text-neutral-500 mt-1 shrink-0" />
+                  <div>
+                    <p>Johannes Backhaus</p>
+                    <p>Wotanstrasse 5</p>
+                    <p>85579 Neubiberg</p>
+                  </div>
                 </div>
 
-                <div className="flex flex-col gap-1">
-                  <a href="tel:+491749327782" className="hover:text-primary-400 transition-colors flex items-center gap-2">
-                    <span className="font-bold text-neutral-200">Mobil:</span> +49 174 93277 82
-                  </a>
-                  <a href="mailto:johannes@vjbackhaus.com" className="hover:text-primary-400 transition-colors flex items-center gap-2">
-                    <span className="font-bold text-neutral-200">Mail:</span> johannes@vjbackhaus.com
-                  </a>
+                {/* Action Buttons */}
+                <div className="flex flex-col gap-3">
+                  {/* Phone Action */}
+                  <div className="flex items-center gap-2">
+                    <a
+                      href="tel:+491749327782"
+                      className="flex-1 flex items-center justify-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-white py-2 px-4 rounded-lg transition-all border border-white/5 hover:border-white/10 group/btn"
+                    >
+                      <Phone className="w-4 h-4 text-primary-400 group-hover/btn:scale-110 transition-transform" />
+                      <span>Anrufen</span>
+                    </a>
+                    <CopyButton text="+491749327782" />
+                  </div>
+
+                  {/* Mail Action */}
+                  <div className="flex items-center gap-2">
+                    <a
+                      href="mailto:johannes@vjbackhaus.com"
+                      className="flex-1 flex items-center justify-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-white py-2 px-4 rounded-lg transition-all border border-white/5 hover:border-white/10 group/btn"
+                    >
+                      <Mail className="w-4 h-4 text-primary-400 group-hover/btn:scale-110 transition-transform" />
+                      <span>E-Mail</span>
+                    </a>
+                    <CopyButton text="johannes@vjbackhaus.com" />
+                  </div>
+                </div>
+
+                {/* Socials & vCard */}
+                <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                  <div className="flex gap-2">
+                    <a
+                      href="https://www.linkedin.com/in/johannes-backhaus-6b2a40149/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-neutral-800 rounded-lg hover:bg-[#0077b5] hover:text-white transition-colors text-neutral-400 border border-white/5"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                    {/* Placeholder for more socials */}
+                  </div>
                 </div>
               </div>
             }
-            header={<div className="flex flex-1 items-center justify-center w-full h-full min-h-[4rem] rounded-xl bg-neutral-900 border border-white/5 group-hover/bento:bg-primary-900/10 transition-colors"><Mail className="h-6 w-6 text-neutral-500 group-hover/bento:text-primary-400 transition-colors" /></div>}
-            icon={<Mail className="h-4 w-4 text-neutral-500" />}
+            header={
+              <div className="flex flex-1 items-center justify-center w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800 border border-white/5 group-hover/contact:border-primary-500/20 transition-all duration-500 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-100 mix-blend-overlay"></div>
+                <div className="relative z-10 p-4 rounded-full bg-white/5 border border-white/10 group-hover/contact:scale-110 group-hover/contact:bg-white/10 transition-all duration-500">
+                  <Mail className="h-8 w-8 text-neutral-400 group-hover/contact:text-primary-400 transition-colors" />
+                </div>
+              </div>
+            }
+            icon={<User className="h-4 w-4 text-neutral-500" />}
           />
 
           {/* Tile 4: Side Business with Flip Gallery */}
