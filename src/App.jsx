@@ -121,7 +121,7 @@ function App() {
           {/* Tile 2: Profession */}
           <BentoCard
             className="md:col-span-1 md:row-span-1 bg-neutral-900 cursor-pointer group/profession"
-            title="Beruf"
+            title="Management & Verantwortung"
             onClick={() => setShowProfessionModal(true)}
             description={
               <div className="flex flex-col gap-2">
@@ -284,7 +284,7 @@ function App() {
       {/* Profession Modal */}
       {showProfessionModal && (
         <DetailModal
-          title="Beruf"
+          title="Management & Verantwortung"
           content={professionContent}
           onClose={() => setShowProfessionModal(false)}
         />
