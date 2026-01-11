@@ -215,7 +215,7 @@ function App() {
                 <div className="flex items-center justify-between pt-4 border-t border-white/5">
                   <div className="flex gap-2">
                     <a
-                      href="https://www.linkedin.com/in/johannes-backhaus-6b2a40149/"
+                      href="https://www.linkedin.com/in/johannes-backhaus-42936b44"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 bg-neutral-800 rounded-lg hover:bg-[#0077b5] hover:text-white transition-colors text-neutral-400 border border-white/5"
