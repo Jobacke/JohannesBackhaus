@@ -56,7 +56,7 @@ export function Layout({ children }) {
             </main>
 
             <footer className="py-8 text-center text-neutral-500 text-sm border-t border-white/5">
-                <p>© {new Date().getFullYear()} Veronika & Johannes Backhaus.</p>
+                <p>© {new Date().getFullYear()} Johannes Backhaus.</p>
                 <div className="mt-2 flex justify-center gap-4">
                     <button onClick={() => setShowImpressum(true)} className="hover:text-white transition-colors">Impressum</button>
                     <button onClick={() => setShowDatenschutz(true)} className="hover:text-white transition-colors">Datenschutz</button>

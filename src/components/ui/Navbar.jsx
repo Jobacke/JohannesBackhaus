@@ -3,13 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "../../lib/utils";
 
-const links = [
-    { name: "Start", href: "#start" },
-    { name: "Über mich", href: "#about" },
-    { name: "Beruf", href: "#profession" },
-    { name: "Nebentätigkeit", href: "#side-business" },
-    { name: "Kontakt", href: "#contact" },
-];
+const links = [];
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);

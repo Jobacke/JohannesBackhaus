@@ -94,11 +94,13 @@ function App() {
   const sideBusinessContent = (
     <>
       <p>
-        Neben meiner Haupttätigkeit engagiere ich mich im Rettungsdienst und realisiere eigene Projekte.
-        Diese Vielseitigkeit erlaubt es mir, über den Tellerrand zu blicken und Kompetenzen aus verschiedenen Welten zu verknüpfen.
+        Neben meiner Haupttätigkeit habe ich mich Anfang 2022 entschieden, eine Ausbildung als Rettungssanitäter zu absolvieren. Ich wollte unbedingt Mitglied der Motorradstaffel der Johanniter Unfallhilfe werden und dazu wird als medizinische Qualifikation die erfolgreich abgeschlossene Ausbildung zum Rettungssanitäter vorausgesetzt. Diese Ausbildung habe ich im April 2022 abgeschlossen und nach mehreren Fahrtrainings auch mein Ziel Mitglied der Motorradstaffel zu werden erreicht.
       </p>
       <p className="mt-4">
-        [Platzhalter für weitere Details zu eigenen Projekten oder spezifischen Qualifikationen im Rettungsdienst.]
+        Nachdem ich einige Zeit ehrenamtlich im Rettungsdienst der JUH in München und im Landkreis gearbeitet habe, bin ich jetzt seit 01.09.2024 mit 20% Nebentätigkeit in der Region München im Rettungsdienst aktiv. Mit der Motorradstaffel sichern wir Veranstaltungen sanitätsdienstlich ab und sorgen an vielen Wochenenden auf den Autobahnen und Fernverkehrsstraßen für freie Staugassen und sind als First Responder im Einsatz.
+      </p>
+      <p className="mt-4">
+        So bin ich im letzten Jahr rund 4600 km im Dienst für andere Menschen mit den Motorrädern der Staffel auf Achse gewesen. Ein ganz besonderes Fahrsicherheitstraining bei der Eskortenstaffel der Bundeswehr hat mich dafür zusätzlich profiliert. Eine Fortbildung in ACLS der American Heart Association rundet mein Fachwissen im Bereich Rettungsdienst ab.
       </p>
     </>
   );
@@ -253,7 +255,7 @@ function App() {
             description={
               <div className="flex flex-col gap-2">
                 <p className="text-neutral-400 group-hover/sidebiz:text-neutral-300 transition-colors">
-                  Im Einsatz für andere
+                  Im Einsatz für Andere
                 </p>
                 <div className="flex items-center gap-1 text-primary-400 text-sm font-medium mt-1 opacity-80 group-hover/sidebiz:opacity-100 transition-opacity">
                   Mehr lesen <ArrowUpRight className="w-4 h-4" />
