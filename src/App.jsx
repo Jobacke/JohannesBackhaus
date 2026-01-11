@@ -113,27 +113,36 @@ function App() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-12 text-center"
+          className="mb-12 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
         >
-          <h1 className="text-5xl md:text-7xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600">
-            Johannes Backhaus
-          </h1>
-          <p className="text-neutral-400 mt-4 text-xl">
-            Musiker | Orchestermanagement | Personalrat | Rettungsdienst
-          </p>
+          <div className="text-center md:text-right flex-1">
+            <h1 className="text-5xl md:text-7xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600">
+              Johannes Backhaus
+            </h1>
+            <p className="text-neutral-400 mt-4 text-xl">
+              Musiker | Orchestermanagement | Personalrat | Rettungsdienst
+            </p>
+          </div>
+
+          <div className="relative group">
+            <div className="absolute inset-0 bg-primary-500/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <img
+              src={profileImg}
+              alt="Johannes Backhaus"
+              className="relative w-48 h-48 md:w-56 md:h-56 rounded-2xl object-cover border border-white/10 shadow-2xl rotate-3 group-hover:rotate-0 transition-all duration-300"
+            />
+          </div>
         </motion.div>
 
         <BentoGrid>
           {/* Tile 1: About / Intro (Large) */}
-          {/* Tile 1: About / Intro (Large) */}
-          {/* Tile 1: About / Intro (Large) */}
           <BentoCard
-            className="md:col-span-2 md:row-span-1 bg-neutral-900 cursor-pointer group/about overflow-hidden relative"
+            className="md:col-span-2 md:row-span-1 bg-gradient-to-br from-neutral-900 to-neutral-800 cursor-pointer group/about"
             title="Über mich"
             onClick={() => setShowBioModal(true)}
             description={
-              <div className="flex flex-col gap-2 relative z-20">
-                <p className="line-clamp-3 md:line-clamp-none text-neutral-300 group-hover/about:text-white transition-colors">
+              <div className="flex flex-col gap-2">
+                <p className="line-clamp-3 md:line-clamp-none text-neutral-400 group-hover/about:text-neutral-300 transition-colors">
                   Vom stellv. Solopauker zum Vorsitzenden des Gesamtpersonalrates. Geboren in Erfurt und musikalisch ausgebildet in Erfurt und Weimar, blicke ich auf eine vielseitige Laufbahn zurück...
                 </p>
                 <div className="flex items-center gap-1 text-primary-400 text-sm font-medium mt-1 opacity-80 group-hover/about:opacity-100 transition-opacity">
@@ -141,19 +150,8 @@ function App() {
                 </div>
               </div>
             }
-            header={
-              <div className="absolute inset-0 z-0">
-                {/* Background Image */}
-                <img
-                  src={profileImg}
-                  alt="Johannes Backhaus"
-                  className="w-full h-full object-cover object-top opacity-40 grayscale-[20%] group-hover/about:grayscale-0 group-hover/about:opacity-60 group-hover/about:scale-105 transition-all duration-700"
-                />
-                {/* Dark Gradient Overlay for Readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/80 to-transparent z-10" />
-              </div>
-            }
-            icon={<User className="h-4 w-4 text-neutral-400 relative z-20" />}
+            header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-primary-900/40 to-neutral-900 border border-white/5 transition-colors group-hover/about:bg-primary-900/20" />}
+            icon={<User className="h-4 w-4 text-neutral-500" />}
           />
 
           {/* Tile 2: Profession */}
