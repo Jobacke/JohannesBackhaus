@@ -60,6 +60,12 @@ function App() {
       <p className="mt-4">
         Ob bei Konzerten in München oder auf Tourneen durch Europa, Asien und Amerika: Diese Aufgabenvielfalt macht meine Tätigkeit für mich zu einem der spannendsten Berufe der Welt!
       </p>
+      <p className="mt-4">
+        Da ich immer wieder neue Herausforderungen suche, habe ich mich entschlossen, mich für die berechtigten Interessen der Beschäftigten des Bayerischen Rundfunks einzusetzen und in vertrauensvoller Zusammenarbeit mit der Geschäftsleitung und den Führungskräften dieses starke Medienunternehmen mitzugestalten.
+      </p>
+      <p className="mt-4">
+        Nach meiner festen Überzeugung ist ein starker, unabhängiger öffentlich-rechtlicher Rundfunk unabdingbar für eine Demokratie. Seit Juli 2024 kann ich dieses Engagement als Vorsitzender des Gesamtpersonalrates des Bayerischen Rundfunks verwirklichen.
+      </p>
     </>
   );
 
