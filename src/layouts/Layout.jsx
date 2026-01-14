@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navbar } from "../components/ui/Navbar";
 import { DetailModal } from "../components/ui/DetailModal";
+import { CookieConsent } from "../components/ui/CookieConsent";
 
 export function Layout({ children }) {
     const [showImpressum, setShowImpressum] = useState(false);
@@ -60,6 +61,7 @@ export function Layout({ children }) {
                 <div className="mt-2 flex justify-center gap-4">
                     <button onClick={() => setShowImpressum(true)} className="hover:text-white transition-colors">Impressum</button>
                     <button onClick={() => setShowDatenschutz(true)} className="hover:text-white transition-colors">Datenschutz</button>
+                    <button onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))} className="hover:text-white transition-colors">Cookie-Einstellungen</button>
                 </div>
             </footer>
 
@@ -78,6 +80,11 @@ export function Layout({ children }) {
                     onClose={() => setShowDatenschutz(false)}
                 />
             )}
+
+            <CookieConsent
+                onOpenPrivacy={() => setShowDatenschutz(true)}
+                onOpenImpressum={() => setShowImpressum(true)}
+            />
         </div>
     );
 }
