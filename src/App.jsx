@@ -113,10 +113,10 @@ function App() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-12 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
+          className="mb-12 flex flex-col items-center justify-center gap-8 text-center"
         >
-          <div className="text-center md:text-right flex-1">
-            <h1 className="text-5xl md:text-7xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-6xl md:text-9xl font-display font-bold tracking-tight text-gradient-nature drop-shadow-2xl">
               Johannes Backhaus
             </h1>
             <p className="text-neutral-400 mt-4 text-xl">
@@ -124,12 +124,12 @@ function App() {
             </p>
           </div>
 
-          <div className="relative group">
+          <div className="relative group mt-8">
             <div className="absolute inset-0 bg-primary-500/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <img
               src={profileImg}
               alt="Johannes Backhaus"
-              className="relative w-48 h-48 md:w-56 md:h-56 rounded-2xl object-cover border border-white/10 shadow-2xl rotate-3 group-hover:rotate-0 transition-all duration-300"
+              className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl object-cover border border-white/10 shadow-2xl rotate-0 group-hover:scale-105 transition-all duration-300"
             />
           </div>
         </motion.div>
@@ -137,7 +137,8 @@ function App() {
         <BentoGrid>
           {/* Tile 1: About / Intro (Large) */}
           <BentoCard
-            className="md:col-span-2 md:row-span-1 bg-gradient-to-br from-neutral-900 to-neutral-800 cursor-pointer group/about"
+            id="about"
+            className="md:col-span-2 md:row-span-1 glass-card cursor-pointer group/about"
             title="Über mich"
             onClick={() => setShowBioModal(true)}
             description={
@@ -156,7 +157,8 @@ function App() {
 
           {/* Tile 2: Profession */}
           <BentoCard
-            className="md:col-span-1 md:row-span-1 bg-neutral-900 cursor-pointer group/profession"
+            id="management"
+            className="md:col-span-1 md:row-span-1 glass-card cursor-pointer group/profession"
             title="Management & Verantwortung"
             onClick={() => setShowProfessionModal(true)}
             description={
@@ -184,7 +186,8 @@ function App() {
 
           {/* Tile 3: Contact (Tall) - Redesign "Connected & Accessible" */}
           <BentoCard
-            className="md:col-span-1 md:row-span-2 bg-neutral-950 group/contact"
+            id="contact"
+            className="md:col-span-1 md:row-span-2 glass-card bg-neutral-950/80 group/contact"
             title="Kontakt"
             description={
               <div className="flex flex-col gap-6 mt-4">
@@ -261,7 +264,8 @@ function App() {
 
           {/* Tile 4: Side Business with Flip Gallery */}
           <BentoCard
-            className="md:col-span-2 md:row-span-1 bg-gradient-to-r from-neutral-900 to-neutral-800 cursor-pointer group/sidebiz"
+            id="passion"
+            className="md:col-span-2 md:row-span-1 glass-card cursor-pointer group/sidebiz"
             title="Passion & Praxis"
             onClick={() => setShowSideBusinessModal(true)}
             description={
@@ -323,7 +327,8 @@ function App() {
 
           {/* Tile 5: Location (Map Style) */}
           <BentoCard
-            className="md:col-span-2 bg-neutral-900"
+            id="location"
+            className="md:col-span-2 glass-card"
             title="Standort"
             description="Neubiberg / München"
             header={

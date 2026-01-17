@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navbar } from "../components/ui/Navbar";
 import { DetailModal } from "../components/ui/DetailModal";
 import { CookieConsent } from "../components/ui/CookieConsent";
@@ -7,6 +7,23 @@ import { InfoFooter } from "../components/ui/InfoFooter";
 export function Layout({ children }) {
     const [showImpressum, setShowImpressum] = useState(false);
     const [showDatenschutz, setShowDatenschutz] = useState(false);
+
+    // Optimized Mouse tracking for "Flashlight" effect - updates CSS vars directly
+    useEffect(() => {
+        const updateMousePosition = (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            document.documentElement.style.setProperty('--mouse-x', `${x}px`);
+            document.documentElement.style.setProperty('--mouse-y', `${y}px`);
+        };
+
+        // Initialize at center
+        document.documentElement.style.setProperty('--mouse-x', '50vw');
+        document.documentElement.style.setProperty('--mouse-y', '50vh');
+
+        window.addEventListener("mousemove", updateMousePosition);
+        return () => window.removeEventListener("mousemove", updateMousePosition);
+    }, []);
 
     const impressumContent = (
         <div className="space-y-4">
@@ -105,28 +122,41 @@ export function Layout({ children }) {
     );
 
     return (
-        <div className="min-h-screen flex flex-col relative overflow-x-hidden">
-            {/* Background Ambience */}
-            <div className="fixed inset-0 z-[-1] pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary-900/20 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent-900/20 rounded-full blur-[120px]" />
+        <div className="min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500/30 bg-neutral-900 text-neutral-100">
+            {/* BACKGROUND LAYER - Fixed, Z=0 */}
+            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+                {/* Blobs */}
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary-900/10 rounded-full blur-[120px]" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent-900/10 rounded-full blur-[120px]" />
+
+                {/* Spotlight Overlay - Uses CSS variables */}
+                <div
+                    className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
+                    style={{
+                        background: `radial-gradient(circle 800px at var(--mouse-x, 50vw) var(--mouse-y, 50vh), rgba(255,255,255,0.06), transparent 40%)`
+                    }}
+                />
             </div>
 
-            <Navbar />
-            <main className="flex-grow pt-24">
-                {children}
-            </main>
+            {/* CONTENT LAYER - Relative, Z=10 */}
+            <div className="relative z-10 flex flex-col min-h-screen">
+                <Navbar />
 
-            <footer className="py-8 text-center text-neutral-500 text-sm border-t border-white/5">
-                <p>© {new Date().getFullYear()} Johannes Backhaus.</p>
-                <div className="mt-2 flex justify-center gap-4">
-                    <button onClick={() => setShowImpressum(true)} className="hover:text-white transition-colors">Impressum</button>
-                    <button onClick={() => setShowDatenschutz(true)} className="hover:text-white transition-colors">Datenschutz</button>
-                    <button onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))} className="hover:text-white transition-colors">Cookie-Einstellungen</button>
-                </div>
-            </footer>
+                <main className="flex-grow pt-24 relative z-10">
+                    {children}
+                </main>
 
-            {/* Legal Modals */}
+                <footer className="py-8 text-center text-neutral-500 text-sm border-t border-white/5 bg-neutral-900/50 backdrop-blur-sm relative z-10">
+                    <p>© {new Date().getFullYear()} Johannes Backhaus.</p>
+                    <div className="mt-2 flex justify-center gap-4">
+                        <button onClick={() => setShowImpressum(true)} className="hover:text-white transition-colors">Impressum</button>
+                        <button onClick={() => setShowDatenschutz(true)} className="hover:text-white transition-colors">Datenschutz</button>
+                        <button onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))} className="hover:text-white transition-colors">Cookie-Einstellungen</button>
+                    </div>
+                </footer>
+            </div>
+
+            {/* Legal Modals - Layer 50 (managed by Dialog/Modal portals usually, but just in case) */}
             {showImpressum && (
                 <DetailModal
                     title="Impressum"
