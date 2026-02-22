@@ -57,17 +57,16 @@ function App() {
   const fullBio = (
     <>
       <p>
-        Vom stellvertretenden Solopauker zum Vorsitzenden des Gesamtpersonalrates.
-        Geboren in Erfurt und musikalisch ausgebildet in Erfurt und Weimar, blicke ich auf eine vielseitige Laufbahn zurück.
+        Vom stellvertretenden Solopauker zum Vorsitzenden des Gesamtpersonalrates – meine berufliche Laufbahn ist geprägt von stetiger Weiterentwicklung und dem Streben, Prozesse aktiv mitzugestalten.
       </p>
       <p className="mt-4">
-        Nach 15 Jahren als passionierter Berufsmusiker wechselte ich die Perspektive:
-        Es folgten spannende Jahre in Führungspositionen im Orchestermanagement – zunächst in Dessau,
-        dann an der renommierten Bayerischen Staatsoper und schließlich beim Symphonieorchester des Bayerischen Rundfunks (BRSO).
+        Geboren in Erfurt und an den dortigen sowie Weimarer Musikhochschulen fundiert ausgebildet, verbrachte ich zunächst 15 erfolgreiche Jahre als passionierter Berufsmusiker. In dieser Zeit durfte ich das Innenleben von Orchestern hautnah erleben und als stellvertretender Solopauker den Rhythmus und Puls der Musik maßgeblich mitgestalten.
       </p>
       <p className="mt-4">
-        Seit 2024 widme ich mich nun mit voller Überzeugung einer neuen Verantwortung:
-        Als Vorsitzender des Gesamtpersonalrates vertrete ich engagiert die Interessen der Mitarbeitenden beim Bayerischen Rundfunk.
+        Angetrieben von dem Wunsch, das große Ganze hinter den Kulissen zu lenken, initiierte ich einen Perspektivenwechsel hinein ins Orchestermanagement. Es folgten prägende Jahre in Führungspositionen: Nach wertvollen Erfahrungen in Dessau führte mich mein Weg an zwei der weltweit führenden Kulturinstitutionen – die Bayerische Staatsoper und schließlich das Symphonieorchester des Bayerischen Rundfunks. Diese Herausforderungen haben meinen Blick für strukturelle Abläufe und wertschätzende Personalführung maßgeblich geschärft.
+      </p>
+      <p className="mt-4">
+        Genau diese Erfahrungen und meine tiefe Verwurzelung in der Belegschaft führten mich zu meinem aktuellen Kapitel: Seit 2024 widme ich mich mit voller Überzeugung einer neuen Verantwortung. Als Vorsitzender des Gesamtpersonalrates setze ich mich beim Bayerischen Rundfunk auf höchster Ebene engagiert für die vielseitigen Interessen, fairen Arbeitsbedingungen und die Zukunft unserer Mitarbeitenden ein. Heute sorge ich nicht mehr für den musikalischen Takt, sondern dafür, dass im Sender menschlich und strukturell alles im richtigen Takt bleibt.
       </p>
     </>
   );
@@ -144,7 +143,7 @@ function App() {
             description={
               <div className="flex flex-col gap-2">
                 <p className="line-clamp-3 md:line-clamp-none text-neutral-400 group-hover/about:text-neutral-300 transition-colors">
-                  Vom stellv. Solopauker zum Vorsitzenden des Gesamtpersonalrates. Geboren in Erfurt und musikalisch ausgebildet in Erfurt und Weimar, blicke ich auf eine vielseitige Laufbahn zurück...
+                  Vom stellv. Solopauker zum Vorsitzenden des Gesamtpersonalrates – meine Laufbahn ist geprägt von stetiger Weiterentwicklung und dem Streben, Prozesse aktiv mitzugestalten...
                 </p>
                 <div className="flex items-center gap-1 text-primary-400 text-sm font-medium mt-1 opacity-80 group-hover/about:opacity-100 transition-opacity">
                   Mehr lesen <ArrowUpRight className="w-4 h-4" />
