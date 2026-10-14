@@ -7,7 +7,8 @@ import { ToggleImage } from "./components/ui/ToggleImage";
 import { FlipCard } from "./components/ui/FlipCard";
 import { ImageModal } from "./components/ui/ImageModal";
 import { DetailModal } from "./components/ui/DetailModal";
-import { Briefcase, Star, Mail, MapPin, Linkedin, Github, User, ZoomIn, ArrowUpRight, Phone, Copy, Check, ExternalLink, Instagram, Compass, Clock, Calendar, Sparkles } from "lucide-react";
+import { VideoModal } from "./components/ui/VideoModal";
+import { Briefcase, Star, Mail, MapPin, Linkedin, Github, User, ZoomIn, ArrowUpRight, Phone, Copy, Check, ExternalLink, Instagram, Compass, Clock, Calendar, Sparkles, Play, Plane, Film } from "lucide-react";
 import { cn } from "./lib/utils";
 
 // Import images
@@ -48,6 +49,7 @@ function App() {
   const [showProfessionModal, setShowProfessionModal] = useState(false);
   const [showSideBusinessModal, setShowSideBusinessModal] = useState(false);
   const [showRetirementModal, setShowRetirementModal] = useState(false);
+  const [activeVideo, setActiveVideo] = useState(null);
 
   const certificates = [
     { src: certRsImg, alt: "Rettungssanitäter Urkunde", label: "Rettungssanitäter" },
@@ -70,8 +72,8 @@ function App() {
         Genau diese Erfahrungen und meine tiefe Verwurzelung in der Belegschaft führten mich zu meiner Verantwortung als Vorsitzender des Gesamtpersonalrates: Hier habe ich mich beim Bayerischen Rundfunk auf höchster Ebene engagiert für die vielseitigen Interessen, fairen Arbeitsbedingungen und die Zukunft unserer Mitarbeitenden eingesetzt.
       </p>
       <p className="mt-4 p-4 rounded-xl bg-primary-500/10 border border-primary-500/20 text-neutral-200">
-        <strong className="text-primary-400 block mb-1">Neuer Lebensabschnitt:</strong>
-        Aktuell baue ich aktiv mein Langzeitkonto (Überstunden) ab und bereite mich auf meinen vorgezogenen Ruhestand ab dem <strong>01.03.2027</strong> vor – mit Vorfreude auf mehr Zeit für mein Engagement im Rettungsdienst bei den Johannitern, Musik und neue persönliche Freiheiten.
+        <strong className="text-primary-400 block mb-1">Neuer Lebensabschnitt & Rettungsdienst:</strong>
+        Aktuell baue ich mein Langzeitkonto (Überstunden) ab und bereite mich auf meinen vorgezogenen Ruhestand ab dem <strong>01.03.2027</strong> vor. Gleichzeitig habe ich mein Engagement bei der Johanniter-Unfall-Hilfe seit dem <strong>01.10.2026 auf 50%</strong> erweitert – mit voller Hingabe für die Notfallmedizin, Motorradstaffel, Musik und neue persönliche Freiheiten.
       </p>
     </>
   );
@@ -111,7 +113,7 @@ function App() {
         </p>
         <ul className="space-y-2 text-sm text-neutral-300 pl-4 list-disc marker:text-primary-400">
           <li>
-            <strong>Rettungsdienst & Motorradstaffel:</strong> Mein Einsatz bei der Johanniter-Unfall-Hilfe (JUH) in der Region München – als First Responder auf den Fernverkehrsstraßen und im sanitätsdienstlichen Schutz – wird mit noch mehr Hingabe und Flexibilität fortgeführt.
+            <strong>Rettungsdienst & Motorradstaffel:</strong> Mit dem Ausbau auf eine <strong>50%-Tätigkeit bei der Johanniter-Unfall-Hilfe (JUH) seit dem 01.10.2026</strong> widme ich mich der Notfallmedizin und der Motorradstaffel in der Region München mit noch größerer zeitlicher Flexibilität.
           </li>
           <li>
             <strong>Musik & Kultur:</strong> Die lebenslange Verbundenheit mit der Musikwelt bleibt als bereichernder Begleiter bestehen.
@@ -120,6 +122,79 @@ function App() {
             <strong>Persönliche Freiheit:</strong> Zeit für Reisen, Motorradtouren, Familie, Freunde und neue Projekte ohne den Takt von Dienstplänen.
           </li>
         </ul>
+      </div>
+
+      {/* Travel Impression Videos Section */}
+      <div className="space-y-3 pt-3 border-t border-white/10">
+        <h4 className="text-lg font-bold text-white flex items-center gap-2">
+          <Plane className="w-5 h-5 text-primary-400" />
+          Reise-Impressionen der Freiphase 2026
+        </h4>
+        <p className="text-sm text-neutral-300">
+          Die gewonnene zeitliche Flexibilität nutze ich intensiv für Reisen in die Natur und den Süden:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+          {/* Schweden Video Card */}
+          <div
+            onClick={() => setActiveVideo({
+              title: "Schweden Reise",
+              date: "30.08. – 06.09.2026",
+              description: "Endlose Wälder, glasklare Seen und pure Weite im Spätsommer.",
+              src: "/assets/videos/schweden.mp4"
+            })}
+            className="group/travel p-4 rounded-xl bg-neutral-800/60 hover:bg-neutral-800 border border-white/10 hover:border-primary-500/50 cursor-pointer transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 font-medium">
+                  🇸🇪 Schweden
+                </span>
+                <span className="text-xs text-neutral-400">30.08. – 06.09.2026</span>
+              </div>
+              <h5 className="font-semibold text-white group-hover/travel:text-primary-400 transition-colors">
+                Natur & Weite im Norden
+              </h5>
+              <p className="text-xs text-neutral-400 mt-1">
+                Eindrücke einer erholsamen Spätsommerwoche in Skandinavien.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 mt-4 text-xs text-primary-400 font-medium">
+              <Play className="w-4 h-4 fill-primary-400" />
+              <span>Video ansehen</span>
+            </div>
+          </div>
+
+          {/* Gardasee Video Card */}
+          <div
+            onClick={() => setActiveVideo({
+              title: "Gardasee Reise",
+              date: "08.09. – 15.09.2026",
+              description: "Italienisches Flair, malerische Ufer und Panoramablicke am Lago di Garda.",
+              src: "/assets/videos/gardasee.mp4"
+            })}
+            className="group/travel p-4 rounded-xl bg-neutral-800/60 hover:bg-neutral-800 border border-white/10 hover:border-primary-500/50 cursor-pointer transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-medium">
+                  🇮🇹 Gardasee
+                </span>
+                <span className="text-xs text-neutral-400">08.09. – 15.09.2026</span>
+              </div>
+              <h5 className="font-semibold text-white group-hover/travel:text-primary-400 transition-colors">
+                Sonne, Berge & Lago di Garda
+              </h5>
+              <p className="text-xs text-neutral-400 mt-1">
+                Wundervolle Tage zwischen Seeufer, Bergen und italienischer Lebensart.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 mt-4 text-xs text-primary-400 font-medium">
+              <Play className="w-4 h-4 fill-primary-400" />
+              <span>Video ansehen</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <p className="pt-2 text-sm text-neutral-400 italic">
@@ -154,7 +229,7 @@ function App() {
         Neben meiner Haupttätigkeit habe ich mich Anfang 2022 entschieden, eine Ausbildung als Rettungssanitäter zu absolvieren. Ich wollte unbedingt Mitglied der Motorradstaffel der Johanniter Unfallhilfe werden und dazu wird als medizinische Qualifikation die erfolgreich abgeschlossene Ausbildung zum Rettungssanitäter vorausgesetzt. Diese Ausbildung habe ich im April 2022 abgeschlossen und nach mehreren Fahrtrainings auch mein Ziel Mitglied der Motorradstaffel zu werden erreicht.
       </p>
       <p className="mt-4">
-        Nachdem ich einige Zeit ehrenamtlich im Rettungsdienst der JUH in München und im Landkreis gearbeitet habe, bin ich jetzt seit 01.09.2024 mit 20% Nebentätigkeit in der Region München im Rettungsdienst aktiv. Mit der Motorradstaffel sichern wir Veranstaltungen sanitätsdienstlich ab und sorgen an vielen Wochenenden auf den Autobahnen und Fernverkehrsstraßen für freie Staugassen und sind als First Responder im Einsatz.
+        Nachdem ich einige Zeit ehrenamtlich im Rettungsdienst der JUH in München und im Landkreis gearbeitet habe und zunächst mit einer 20%-Nebentätigkeit aktiv war, bin ich jetzt seit dem <strong>01.10.2026 mit 50% im Rettungsdienst der JUH</strong> in der Region München tätig. Mit der Motorradstaffel sichern wir Veranstaltungen sanitätsdienstlich ab und sorgen an vielen Wochenenden auf den Autobahnen und Fernverkehrsstraßen für freie Staugassen und sind als First Responder im Einsatz.
       </p>
       <p className="mt-4">
         So bin ich im letzten Jahr rund 4600 km im Dienst für andere Menschen mit den Motorrädern der Staffel auf Achse gewesen. Ein ganz besonderes Fahrsicherheitstraining bei der Eskortenstaffel der Bundeswehr hat mich dafür zusätzlich profiliert. Eine Fortbildung in ACLS der American Heart Association rundet mein Fachwissen im Bereich Rettungsdienst ab.
@@ -384,7 +459,7 @@ function App() {
             description={
               <div className="flex flex-col gap-2">
                 <p className="text-neutral-400 group-hover/sidebiz:text-neutral-300 transition-colors">
-                  Im Einsatz für Andere
+                  Im Einsatz für Andere – seit 01.10.2026 mit 50% im Rettungsdienst der JUH & Motorradstaffel.
                 </p>
                 <div className="flex items-center gap-1 text-primary-400 text-sm font-medium mt-1 opacity-80 group-hover/sidebiz:opacity-100 transition-opacity">
                   Mehr lesen <ArrowUpRight className="w-4 h-4" />
@@ -509,6 +584,14 @@ function App() {
           title="Passion & Praxis"
           content={sideBusinessContent}
           onClose={() => setShowSideBusinessModal(false)}
+        />
+      )}
+
+      {/* Travel Video Modal */}
+      {activeVideo && (
+        <VideoModal
+          video={activeVideo}
+          onClose={() => setActiveVideo(null)}
         />
       )}
     </Layout>
