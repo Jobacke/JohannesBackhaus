@@ -7,7 +7,7 @@ import { ToggleImage } from "./components/ui/ToggleImage";
 import { FlipCard } from "./components/ui/FlipCard";
 import { ImageModal } from "./components/ui/ImageModal";
 import { DetailModal } from "./components/ui/DetailModal";
-import { Briefcase, Star, Mail, MapPin, Linkedin, Github, User, ZoomIn, ArrowUpRight, Phone, Copy, Check, ExternalLink, Instagram } from "lucide-react";
+import { Briefcase, Star, Mail, MapPin, Linkedin, Github, User, ZoomIn, ArrowUpRight, Phone, Copy, Check, ExternalLink, Instagram, Compass, Clock, Calendar, Sparkles } from "lucide-react";
 import { cn } from "./lib/utils";
 
 // Import images
@@ -47,6 +47,7 @@ function App() {
   const [showBioModal, setShowBioModal] = useState(false);
   const [showProfessionModal, setShowProfessionModal] = useState(false);
   const [showSideBusinessModal, setShowSideBusinessModal] = useState(false);
+  const [showRetirementModal, setShowRetirementModal] = useState(false);
 
   const certificates = [
     { src: certRsImg, alt: "Rettungssanitäter Urkunde", label: "Rettungssanitäter" },
@@ -66,9 +67,65 @@ function App() {
         Angetrieben von dem Wunsch, das große Ganze hinter den Kulissen zu lenken, initiierte ich einen Perspektivenwechsel hinein ins Orchestermanagement. Es folgten prägende Jahre in Führungspositionen: Nach wertvollen Erfahrungen in Dessau führte mich mein Weg an zwei der weltweit führenden Kulturinstitutionen – die Bayerische Staatsoper und schließlich das Symphonieorchester des Bayerischen Rundfunks. Diese Herausforderungen haben meinen Blick für strukturelle Abläufe und wertschätzende Personalführung maßgeblich geschärft.
       </p>
       <p className="mt-4">
-        Genau diese Erfahrungen und meine tiefe Verwurzelung in der Belegschaft führten mich zu meinem aktuellen Kapitel: Seit 2024 widme ich mich mit voller Überzeugung einer neuen Verantwortung. Als Vorsitzender des Gesamtpersonalrates setze ich mich beim Bayerischen Rundfunk auf höchster Ebene engagiert für die vielseitigen Interessen, fairen Arbeitsbedingungen und die Zukunft unserer Mitarbeitenden ein. Heute sorge ich nicht mehr für den musikalischen Takt, sondern dafür, dass im Sender menschlich und strukturell alles im richtigen Takt bleibt.
+        Genau diese Erfahrungen und meine tiefe Verwurzelung in der Belegschaft führten mich zu meiner Verantwortung als Vorsitzender des Gesamtpersonalrates: Hier habe ich mich beim Bayerischen Rundfunk auf höchster Ebene engagiert für die vielseitigen Interessen, fairen Arbeitsbedingungen und die Zukunft unserer Mitarbeitenden eingesetzt.
+      </p>
+      <p className="mt-4 p-4 rounded-xl bg-primary-500/10 border border-primary-500/20 text-neutral-200">
+        <strong className="text-primary-400 block mb-1">Neuer Lebensabschnitt:</strong>
+        Aktuell baue ich aktiv mein Langzeitkonto (Überstunden) ab und bereite mich auf meinen vorgezogenen Ruhestand ab dem <strong>01.03.2027</strong> vor – mit Vorfreude auf mehr Zeit für mein Engagement im Rettungsdienst bei den Johannitern, Musik und neue persönliche Freiheiten.
       </p>
     </>
+  );
+
+  const retirementContent = (
+    <div className="space-y-4">
+      <div className="p-4 rounded-xl bg-primary-500/10 border border-primary-500/20 text-neutral-200">
+        <div className="flex items-center gap-2 text-primary-400 font-bold text-base mb-1">
+          <Calendar className="w-5 h-5" />
+          Meilenstein 01.03.2027 – Vorgezogener Ruhestand
+        </div>
+        <p className="text-sm text-neutral-300">
+          Nach Jahrzehnten vollen Einsatzes auf den Konzertbühnen, in der Orchesterleitung und an der Spitze der Mitarbeitervertretung bricht ein wohlüberlegter neuer Lebensabschnitt an.
+        </p>
+      </div>
+
+      <div className="space-y-2">
+        <h4 className="text-lg font-bold text-white flex items-center gap-2">
+          <Clock className="w-5 h-5 text-primary-400" />
+          Aktuelle Phase: Abbau des Langzeitkontos
+        </h4>
+        <p>
+          Aktuell befinde ich mich in der Freiphase zum Abbau meines Langzeitkontos. Die über viele Jahre durch engagierte Sonderprojekte, Konzertreisen und Leitungsfunktionen aufgebauten Überstunden nutze ich nun gezielt, um den Übergang in den Ruhestand bewusst zu gestalten.
+        </p>
+        <p>
+          Dieser Zeitgewinn ermöglicht es mir bereits heute, das Berufsleben mit Dankbarkeit abzuschließen und neue Prioritäten im Alltag zu setzen.
+        </p>
+      </div>
+
+      <div className="space-y-2 pt-2 border-t border-white/10">
+        <h4 className="text-lg font-bold text-white flex items-center gap-2">
+          <Compass className="w-5 h-5 text-primary-400" />
+          Ausblick & Leidenschaften für die Zukunft
+        </h4>
+        <p>
+          Ruhestand bedeutet für mich nicht Stillstand, sondern die Freiheit, Zeit dort einzusetzen, wo Herz und Tatkraft gebraucht werden:
+        </p>
+        <ul className="space-y-2 text-sm text-neutral-300 pl-4 list-disc marker:text-primary-400">
+          <li>
+            <strong>Rettungsdienst & Motorradstaffel:</strong> Mein Einsatz bei der Johanniter-Unfall-Hilfe (JUH) in der Region München – als First Responder auf den Fernverkehrsstraßen und im sanitätsdienstlichen Schutz – wird mit noch mehr Hingabe und Flexibilität fortgeführt.
+          </li>
+          <li>
+            <strong>Musik & Kultur:</strong> Die lebenslange Verbundenheit mit der Musikwelt bleibt als bereichernder Begleiter bestehen.
+          </li>
+          <li>
+            <strong>Persönliche Freiheit:</strong> Zeit für Reisen, Motorradtouren, Familie, Freunde und neue Projekte ohne den Takt von Dienstplänen.
+          </li>
+        </ul>
+      </div>
+
+      <p className="pt-2 text-sm text-neutral-400 italic">
+        „Jeder Abschied von einer beruflichen Station ist das Tor zu neuen Wegen und wertvollen Freiheiten.“
+      </p>
+    </div>
   );
 
   const professionContent = (
@@ -115,6 +172,15 @@ function App() {
           className="mb-12 flex flex-col items-center justify-center gap-8 text-center"
         >
           <div className="max-w-4xl mx-auto">
+            <div
+              onClick={() => setShowRetirementModal(true)}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs md:text-sm font-medium mb-6 hover:bg-primary-500/20 cursor-pointer transition-all duration-300 group"
+            >
+              <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
+              <span>Aktuell im Überstundenabbau • Vorgezogener Ruhestand ab 01.03.2027</span>
+              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </div>
+
             <h1 className="text-6xl md:text-9xl font-display font-bold tracking-tight text-gradient-nature drop-shadow-2xl">
               Johannes Backhaus
             </h1>
@@ -181,6 +247,54 @@ function App() {
               </div>
             }
             icon={<Briefcase className="h-4 w-4 text-neutral-500" />}
+          />
+
+          {/* Tile: Retirement / New Life Chapter */}
+          <BentoCard
+            id="retirement"
+            className="md:col-span-2 md:row-span-1 glass-card cursor-pointer group/retire ring-1 ring-primary-500/20 hover:ring-primary-500/40"
+            title="Neuer Lebensabschnitt: Freiphase & Ruhestand"
+            onClick={() => setShowRetirementModal(true)}
+            icon={<Compass className="h-4 w-4 text-neutral-500" />}
+            description={
+              <div className="flex flex-col gap-2">
+                <p className="text-neutral-400 group-hover/retire:text-neutral-300 transition-colors">
+                  Aktuell baue ich mein Langzeitkonto (Überstunden) ab und bereite mich auf den vorgezogenen Ruhestand ab dem <strong>01.03.2027</strong> vor – mit Raum für Notfallmedizin, Musik und neue Herzensprojekte.
+                </p>
+                <div className="flex items-center gap-1 text-primary-400 text-sm font-medium mt-1 opacity-80 group-hover/retire:opacity-100 transition-opacity">
+                  Mehr lesen <ArrowUpRight className="w-4 h-4" />
+                </div>
+              </div>
+            }
+            header={
+              <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-primary-950/50 via-neutral-900/80 to-teal-950/40 border border-primary-500/20 p-5 flex flex-col justify-between relative overflow-hidden group">
+                <div className="flex items-center justify-between text-xs font-semibold relative z-10">
+                  <span className="flex items-center gap-1 text-primary-400">
+                    <Clock className="w-3.5 h-3.5" />
+                    Aktuell: Langzeitkonto-Abbau
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-primary-500/20 text-primary-300 border border-primary-500/30">
+                    01.03.2027 Ruhestand
+                  </span>
+                </div>
+                <div className="relative z-10 flex items-center gap-4 mt-2">
+                  <div className="w-10 h-10 rounded-xl bg-primary-500/20 border border-primary-500/30 flex items-center justify-center text-primary-400 shrink-0">
+                    <Sparkles className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-neutral-200 font-semibold text-sm md:text-base">
+                      Vom intensiven Berufsleben zu neuen Freiräumen
+                    </div>
+                    <div className="text-xs text-neutral-400">
+                      Mehr Flexibilität für JUH-Rettungsdienst, Reisen und Musik
+                    </div>
+                  </div>
+                </div>
+                <div className="w-full bg-neutral-800/80 h-1.5 rounded-full overflow-hidden mt-3">
+                  <div className="bg-gradient-to-r from-emerald-400 to-teal-400 h-full w-3/4 rounded-full" />
+                </div>
+              </div>
+            }
           />
 
           {/* Tile 3: Contact (Tall) - Redesign "Connected & Accessible" */}
@@ -327,7 +441,7 @@ function App() {
           {/* Tile 5: Location (Map Style) */}
           <BentoCard
             id="location"
-            className="md:col-span-2 glass-card"
+            className="md:col-span-3 glass-card"
             title="Standort"
             description="Neubiberg / München"
             header={
@@ -377,6 +491,15 @@ function App() {
           title="Management & Verantwortung"
           content={professionContent}
           onClose={() => setShowProfessionModal(false)}
+        />
+      )}
+
+      {/* Retirement Modal */}
+      {showRetirementModal && (
+        <DetailModal
+          title="Neuer Lebensabschnitt: Freiphase & Ruhestand"
+          content={retirementContent}
+          onClose={() => setShowRetirementModal(false)}
         />
       )}
 
