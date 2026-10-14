@@ -135,25 +135,25 @@ function App() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-          {/* Schweden Video Card */}
+          {/* Schweden Video 1 */}
           <div
             onClick={() => setActiveVideo({
-              title: "Schweden Reise",
+              title: "Schweden Reise – Impressionen Teil 1",
               date: "30.08. – 06.09.2026",
               description: "Endlose Wälder, glasklare Seen und pure Weite im Spätsommer.",
-              src: "/assets/videos/schweden.mp4"
+              src: "/assets/videos/Schweden1.mp4"
             })}
             className="group/travel p-4 rounded-xl bg-neutral-800/60 hover:bg-neutral-800 border border-white/10 hover:border-primary-500/50 cursor-pointer transition-all duration-300 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 font-medium">
-                  🇸🇪 Schweden
+                  🇸🇪 Schweden 1
                 </span>
                 <span className="text-xs text-neutral-400">30.08. – 06.09.2026</span>
               </div>
               <h5 className="font-semibold text-white group-hover/travel:text-primary-400 transition-colors">
-                Natur & Weite im Norden
+                Natur & Weite im Norden (Teil 1)
               </h5>
               <p className="text-xs text-neutral-400 mt-1">
                 Eindrücke einer erholsamen Spätsommerwoche in Skandinavien.
@@ -165,28 +165,88 @@ function App() {
             </div>
           </div>
 
-          {/* Gardasee Video Card */}
+          {/* Schweden Video 2 */}
           <div
             onClick={() => setActiveVideo({
-              title: "Gardasee Reise",
+              title: "Schweden Reise – Impressionen Teil 2",
+              date: "30.08. – 06.09.2026",
+              description: "Erkundungen, Ruhe und unberührte Natur im schwedischen Spätsommer.",
+              src: "/assets/videos/Schweden2.mp4"
+            })}
+            className="group/travel p-4 rounded-xl bg-neutral-800/60 hover:bg-neutral-800 border border-white/10 hover:border-primary-500/50 cursor-pointer transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 font-medium">
+                  🇸🇪 Schweden 2
+                </span>
+                <span className="text-xs text-neutral-400">30.08. – 06.09.2026</span>
+              </div>
+              <h5 className="font-semibold text-white group-hover/travel:text-primary-400 transition-colors">
+                Natur & Weite im Norden (Teil 2)
+              </h5>
+              <p className="text-xs text-neutral-400 mt-1">
+                Weitere stimmungsvolle Momente aus Schweden.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 mt-4 text-xs text-primary-400 font-medium">
+              <Play className="w-4 h-4 fill-primary-400" />
+              <span>Video ansehen</span>
+            </div>
+          </div>
+
+          {/* Gardasee Video 1 */}
+          <div
+            onClick={() => setActiveVideo({
+              title: "Gardasee Reise – Impressionen Teil 1",
               date: "08.09. – 15.09.2026",
               description: "Italienisches Flair, malerische Ufer und Panoramablicke am Lago di Garda.",
-              src: "/assets/videos/gardasee.mp4"
+              src: "/assets/videos/Gardasee1.mp4"
             })}
             className="group/travel p-4 rounded-xl bg-neutral-800/60 hover:bg-neutral-800 border border-white/10 hover:border-primary-500/50 cursor-pointer transition-all duration-300 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-medium">
-                  🇮🇹 Gardasee
+                  🇮🇹 Gardasee 1
                 </span>
                 <span className="text-xs text-neutral-400">08.09. – 15.09.2026</span>
               </div>
               <h5 className="font-semibold text-white group-hover/travel:text-primary-400 transition-colors">
-                Sonne, Berge & Lago di Garda
+                Sonne, Ufer & Lago di Garda (Teil 1)
               </h5>
               <p className="text-xs text-neutral-400 mt-1">
-                Wundervolle Tage zwischen Seeufer, Bergen und italienischer Lebensart.
+                Wundervolle Tage zwischen Seeufer und italienischer Lebensart.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 mt-4 text-xs text-primary-400 font-medium">
+              <Play className="w-4 h-4 fill-primary-400" />
+              <span>Video ansehen</span>
+            </div>
+          </div>
+
+          {/* Gardasee Video 2 */}
+          <div
+            onClick={() => setActiveVideo({
+              title: "Gardasee Reise – Impressionen Teil 2",
+              date: "08.09. – 15.09.2026",
+              description: "Berge, Kurven und faszinierende Ausblicke rund um den Gardasee.",
+              src: "/assets/videos/Gardasee2.mp4"
+            })}
+            className="group/travel p-4 rounded-xl bg-neutral-800/60 hover:bg-neutral-800 border border-white/10 hover:border-primary-500/50 cursor-pointer transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-medium">
+                  🇮🇹 Gardasee 2
+                </span>
+                <span className="text-xs text-neutral-400">08.09. – 15.09.2026</span>
+              </div>
+              <h5 className="font-semibold text-white group-hover/travel:text-primary-400 transition-colors">
+                Panoramen & Bergstraßen (Teil 2)
+              </h5>
+              <p className="text-xs text-neutral-400 mt-1">
+                Aussichten und Erlebnisse aus den Höhen rund um den See.
               </p>
             </div>
             <div className="flex items-center gap-2 mt-4 text-xs text-primary-400 font-medium">
